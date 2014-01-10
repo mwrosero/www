@@ -158,6 +158,7 @@ html,body{
 	background-image: url(../images/bg.jpg);
 	width: 100%;
 	position: fixed;
+	left: 0px;
 	display: inline-table;
 	min-height: 10%;
 	top: 0;
