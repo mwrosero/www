@@ -1,0 +1,17 @@
+@media only screen and (min-height: 1220px){
+	.titulo-page-right h2{
+		margin-top: 50px;
+		font-size: 30px;
+	}	
+	#map_canvas{
+		display: none;
+		width: 100% !important;
+	}
+	.der-tw a p{
+		margin-top: 30px;
+	}
+}
+
+@media only screen and (min-height: 1830px){
+		
+}

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=yes, initial-scale=0.75, maximum-scale=0.75, minimum-scale=0.5, target-densitydpi=medium-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/screen.css" />
+        <link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.2.0.css" />
+        <title>InterClick</title>
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery.mobile-1.2.0.js"></script>
+        <script src="js/chat_client.js"></script>
+        <script src="js/app_chat.js"></script>
+        <!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+
+    </head>
+    <body>
+
+        <!--
+            ========================= HOME PAGE ==========================
+        -->
+
+        <div id="home-page" data-role="page" class="type-home">
+            <img class="logo-home" src="images/bancoiniciolabel.png">
+            <p><img class="loading-home-gif" src="images/ajax-loader.gif"></p>
+            <img class="load-home" src="images/cargando_label.png">
+        </div>
+
+        <!--
+            ========================= MENU PAGE ==========================
+        -->
+
+        <div id="menu-page" data-role="page" class="type-home">
+            <img class="logo-menu" src="images/bancoiniciolabel.png">
+            <div id="contenedor-twitter">
+                <div class="izq-tw">
+                    <img src="images/twitter.png">
+                </div>
+                <div class="der-tw">
+                     
+                </div>
+            </div>
+            <ul data-role="listview" data-inset="false" id="ul-menu">
+                <li>
+                    <a href="javascript:direccionar(1);">
+                        <img src="images/cerca.png">
+                        <h2>Cerca de ti</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:direccionar(2);">
+                        <img src="images/quiero.png">
+                        <h2>Quiero ser cliente</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:direccionar(3);">
+                        <img src="images/bancontrol.png">
+                        <h2>Bancontrol</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:direccionar(4);">
+                        <img src="images/beneficios.png">
+                        <h2>Beneficios</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:direccionar(5);">
+                        <img src="images/servicio.png">
+                        <h2>Servicio al cliente</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:direccionar(6);">
+                        <img src="images/interbox.png">
+                        <h2>Interbox</h2>
+                    </a>
+                </li>
+            </ul>
+            <p class="separador-inferior">.</p>
+        </div>
+
+        <!--
+            ========================= CERCA PAGE ==========================
+        -->
+        
+        <div id="cerca-page" data-role="page" class="type-home">
+            <div id="menu-header">
+                <a href="#menu-page" data-direction="reverse">
+                    <div class="back-menu">
+                        <img class="img-back" src="images/back.png">
+                    </div>
+                </a>
+                <div class="logo-menu-img">
+                    <img class="logo-menu-all" src="images/bancomenulabel.png">
+                </div>
+            </div>
+            <div class="content">
+                <div id="contenedor-twitter">
+                    <div class="izq-tw">
+                        <img src="images/twitter.png">
+                    </div>
+                    <div class="der-tw">
+                         
+                    </div>
+                </div>
+                <div class="titulo-page">
+                    <div class="titulo-page-left">
+                        <img src="images/cerca.png">
+                    </div>
+                    <div class="titulo-page-right">
+                        <h2>Más cerca de ti</h2>
+                    </div>
+                </div>
+                <div id="contenido">
+                    <div id="map_canvas"><img id="map_loader_img" src="images/map_loader.gif"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--
+            ========================= QUIERO PAGE ==========================
+        -->
+
+        <div id="quiero-page" data-role="page" class="type-home">
+            <div id="menu-header">
+                <a href="#menu-page" data-direction="reverse" class="back-btn-reg">
+                    <div class="back-menu">
+                        <img class="img-back" src="images/back.png">
+                    </div>
+                </a>
+                <div class="logo-menu-img">
+                    <img class="logo-menu-all" src="images/bancomenulabel.png">
+                </div>
+            </div>
+            <div class="content">
+                <div id="contenedor-twitter">
+                    <div class="izq-tw">
+                        <img src="images/twitter.png">
+                    </div>
+                    <div class="der-tw">
+                         
+                    </div>
+                </div>
+                <div class="titulo-page">
+                    <div class="titulo-page-left">
+                        <img src="images/quiero.png">
+                    </div>
+                    <div class="titulo-page-right">
+                        <h2>Quiero ser cliente</h2>
+                    </div>
+                </div>
+                <div id="contenido">
+                    <p id="mensaje_error">Algunos campos estan incorrectos</p>
+                    <p><input type="text" data-clear-btn="true" id="txt_nombre" name="txt_nombre" placeholder="Nombres"></p>
+                    <p><input type="text" data-clear-btn="true" id="txt_apellido" name="txt_apellido" placeholder="Apellidos"></p>
+                    <p><input type="text" data-clear-btn="true" id="txt_cedula" name="txt_cedula" placeholder="Identificación"></p>
+                    <p><input type="text" data-clear-btn="true" id="txt_ciudad" name="txt_ciudad" placeholder="Ciudad"></p>
+                    <p><input type="text" data-clear-btn="true" id="txt_direccion" name="txt_direccion" placeholder="Dirección"></p>
+                    <p><input type="text" data-clear-btn="true" id="txt_telefono" name="txt_telefono" placeholder="Teléfono"></p>
+                    <h2 class="info-label">Información adicional</h2>
+                    <form>
+                        <fieldset data-role="controlgroup">
+                            <input type="checkbox" name="checkbox-v-2a" id="checkbox-v-2a" class="custom">
+                            <label for="checkbox-v-2a">Cuenta Corriente</label>
+                            <input type="checkbox" name="checkbox-v-2b" id="checkbox-v-2b" class="custom">
+                            <label for="checkbox-v-2b">Cuenta Ahorros</label>
+                            <input type="checkbox" name="checkbox-v-2c" id="checkbox-v-2c" class="custom">
+                            <label for="checkbox-v-2c">Inversiones</label>
+                            <input type="checkbox" name="checkbox-v-2d" id="checkbox-v-2d" class="custom">
+                            <label for="checkbox-v-2d">Préstamos</label>
+                            <input type="checkbox" name="checkbox-v-2e" id="checkbox-v-2e" class="custom">
+                            <label for="checkbox-v-2e">Tarjeta de Crédito</label>    
+                        </fieldset>
+                    </form>
+                    <img id="btn_enviar_quiero" src="images/btn_enviar.png">
+                    <p class="separador-inferior">.</p>
+                </div>
+            </div>
+        </div>
+
+        <!--
+            ========================= BANCONTROL PAGE ==========================
+        -->
+
+        <div id="bancontrol-page" data-role="page" class="type-home">
+            <div id="menu-header">
+                <a href="#menu-page" data-direction="reverse">
+                    <div class="back-menu">
+                        <img class="img-back" src="images/back.png">
+                    </div>
+                </a>
+                <div class="logo-menu-img">
+                    <img class="logo-menu-all" src="images/bancomenulabel.png">
+                </div>
+            </div>
+            <div class="content">
+                <div id="contenedor-twitter">
+                    <div class="izq-tw">
+                        <img src="images/twitter.png">
+                    </div>
+                    <div class="der-tw">
+                         
+                    </div>
+                </div>
+                <div class="titulo-page">
+                    <div class="titulo-page-left">
+                        <img src="images/bancontrol.png">
+                    </div>
+                    <div class="titulo-page-right">
+                        <h2>Bancontrol</h2>
+                    </div>
+                </div>
+                <div id="contenido">
+                    <div data-role="collapsible-set">
+                        <div data-role="collapsible">
+                            <h1>
+                                <div class="img-acc">
+                                    <img src="images/situacion.png">
+                                </div>
+                                <div class="label-acc">
+                                    <h2>Situación Mensual</h2>
+                                </div>
+                            </h1>
+                            <div id="ingresos" class="ing_">
+                                <table class="table-bancontrol" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th width="55%" scope="col"><h2><b>Tipo de Ingresos</b></h2></th>  
+                                            <th width="35%" scope="col"><h2><b>Valor</b></h2></th>  
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="60%"><h3>Sueldo</h3></td>
+                                            <td width="30%"><input type="number" class="ingresos_txt" id="txt_sueldo_ing" name="txt_sueldo_ing"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Ahorros en Banco</h3></td>
+                                            <td width="30%"><input type="number" class="ingresos_txt" id="txt_ahorros_ing" name="txt_ahorros_ing"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Otro Ingreso</h3></td>
+                                            <td width="30%"><input type="number" class="ingresos_txt" id="txt_otro_ing" name="txt_otro_ing"></td>
+                                        </tr>
+                                        <tr>
+                                            <th width="60%" scope="row"><h3>Total de Ingresos</h3></td>
+                                            <td width="30%"><input type="number" id="txt_total_ing" name="txt_total_ing"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="gastos" class="gas_">
+                                <table class="table-bancontrol" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th width="55%" scope="col"><h2><b>Tipo de Gastos</b></h2></th>  
+                                            <th width="35%" scope="col"><h2><b>Valor</b></h2></th>  
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="60%"><h3>Alimentación</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_alimentacion_gas" name="txt_alimentacion_gas"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Educación</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_educacion_gas" name="txt_educacion_gas"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Transporte</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_transporte_gas" name="txt_transporte_gas"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Servicios Básicos</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_servicios_gas" name="txt_servicios_gas"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Arriendo</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_arriendo_gas" name="txt_arriendo_gas"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Vestimenta</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_vestimenta_gas" name="txt_vestimenta_gas"></td>
+                                        </tr>
+                                        <tr>
+                                            <th width="60%" scope="row"><h3>Total de Gastos</h3></td>
+                                            <td width="30%"><input type="number" id="txt_total_gas" name="txt_total_gas"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="menu-bancontrol">
+                                <img class="efecto-boton b_i" id="btn_ingresos" src="images/btn_ingresos.png">
+                                <img class="efecto-boton" id="btn_asesor" src="images/btn_asesor.png">
+                                <img class="efecto-boton b_g" id="btn_gastos" src="images/btn_gastos.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div data-role="collapsible-set">
+                        <div data-role="collapsible">
+                            <h1>
+                                <div class="img-acc">
+                                    <img src="images/situacion.png">
+                                </div>
+                                <div class="label-acc">
+                                    <h2>Viaje</h2>
+                                </div>
+                            </h1>
+                            <div id="ingresos" class="ing_">
+                                <table class="table-bancontrol" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th width="55%" scope="col"><h2><b>Tipo de Ingresos</b></h2></th>  
+                                            <th width="35%" scope="col"><h2><b>Valor</b></h2></th>  
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="60%"><h3>Sueldo</h3></td>
+                                            <td width="30%"><input type="number" class="ingresos_txt" id="txt_sueldo_ing_2" name="txt_sueldo_ing_2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Ahorros en Banco</h3></td>
+                                            <td width="30%"><input type="number" class="ingresos_txt" id="txt_ahorros_ing_2" name="txt_ahorros_ing_2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Otro Ingreso</h3></td>
+                                            <td width="30%"><input type="number" class="ingresos_txt" id="txt_otro_ing_2" name="txt_otro_ing_2"></td>
+                                        </tr>
+                                        <tr>
+                                            <th width="60%" scope="row"><h3>Total de Ingresos</h3></td>
+                                            <td width="30%"><input type="number" id="txt_total_ing_2" name="txt_total_ing_2"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="gastos" class="gas_">
+                                <table class="table-bancontrol" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th width="55%" scope="col"><h2><b>Tipo de Gastos</b></h2></th>  
+                                            <th width="35%" scope="col"><h2><b>Valor</b></h2></th>  
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="60%"><h3>Alimentación</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_alimentacion_gas_2" name="txt_alimentacion_gas_2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Educación</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_educacion_gas_2" name="txt_educacion_gas_2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Transporte</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_transporte_gas_2" name="txt_transporte_gas_2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Servicios Básicos</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_servicios_gas_2" name="txt_servicios_gas_2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Arriendo</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_arriendo_gas_2" name="txt_arriendo_gas_2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Vestimenta</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_vestimenta_gas_2" name="txt_vestimenta_gas_2"></td>
+                                        </tr>
+                                        <tr>
+                                            <th width="60%" scope="row"><h3>Total de Gastos</h3></td>
+                                            <td width="30%"><input type="number" id="txt_total_gas_2" name="txt_total_gas_2"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="menu-bancontrol">
+                                <img class="efecto-boton b_i" id="btn_ingresos" src="images/btn_ingresos.png">
+                                <img class="efecto-boton" id="btn_asesor_2" src="images/btn_asesor.png">
+                                <img class="efecto-boton b_g" id="btn_gastos" src="images/btn_gastos.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div data-role="collapsible-set">
+                        <div data-role="collapsible">
+                            <h1>
+                                <div class="img-acc">
+                                    <img src="images/situacion.png">
+                                </div>
+                                <div class="label-acc">
+                                    <h2>Entretenimiento</h2>
+                                </div>
+                            </h1>
+                            <div id="ingresos" class="ing_">
+                                <table class="table-bancontrol" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th width="55%" scope="col"><h2><b>Tipo de Ingresos</b></h2></th>  
+                                            <th width="35%" scope="col"><h2><b>Valor</b></h2></th>  
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="60%"><h3>Sueldo</h3></td>
+                                            <td width="30%"><input type="number" class="ingresos_txt" id="txt_sueldo_ing_3" name="txt_sueldo_ing_3"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Ahorros en Banco</h3></td>
+                                            <td width="30%"><input type="number" class="ingresos_txt" id="txt_ahorros_ing_3" name="txt_ahorros_ing_3"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Otro Ingreso</h3></td>
+                                            <td width="30%"><input type="number" class="ingresos_txt" id="txt_otro_ing_3" name="txt_otro_ing_3"></td>
+                                        </tr>
+                                        <tr>
+                                            <th width="60%" scope="row"><h3>Total de Ingresos</h3></td>
+                                            <td width="30%"><input type="number" id="txt_total_ing_3" name="txt_total_ing_3"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="gastos" class="gas_">
+                                <table class="table-bancontrol" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th width="55%" scope="col"><h2><b>Tipo de Gastos</b></h2></th>  
+                                            <th width="35%" scope="col"><h2><b>Valor</b></h2></th>  
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="60%"><h3>Alimentación</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_alimentacion_gas_3" name="txt_alimentacion_gas_3"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Educación</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_educacion_gas_3" name="txt_educacion_gas"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Transporte</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_transporte_gas_3" name="txt_transporte_gas"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Servicios Básicos</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_servicios_gas_3" name="txt_servicios_gas"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Arriendo</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_arriendo_gas_3" name="txt_arriendo_gas"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Vestimenta</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_vestimenta_gas_3" name="txt_vestimenta_gas"></td>
+                                        </tr>
+                                        <tr>
+                                            <th width="60%" scope="row"><h3>Total de Gastos</h3></td>
+                                            <td width="30%"><input type="number" id="txt_total_gas_3" name="txt_total_gas_3"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="menu-bancontrol">
+                                <img class="efecto-boton b_i" id="btn_ingresos" src="images/btn_ingresos.png">
+                                <img class="efecto-boton" id="btn_asesor_3" src="images/btn_asesor.png">
+                                <img class="efecto-boton b_g" id="btn_gastos" src="images/btn_gastos.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div data-role="collapsible-set">
+                        <div data-role="collapsible">
+                            <h1>
+                                <div class="img-acc">
+                                    <img src="images/situacion.png">
+                                </div>
+                                <div class="label-acc">
+                                    <h2>Otra Categoría</h2>
+                                </div>
+                            </h1>
+                            <div id="ingresos" class="ing_">
+                                <table class="table-bancontrol" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th width="55%" scope="col"><h2><b>Tipo de Ingresos</b></h2></th>  
+                                            <th width="35%" scope="col"><h2><b>Valor</b></h2></th>  
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="60%"><h3>Sueldo</h3></td>
+                                            <td width="30%"><input type="number" class="ingresos_txt" id="txt_sueldo_ing_4" name="txt_sueldo_ing_4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Ahorros en Banco</h3></td>
+                                            <td width="30%"><input type="number" class="ingresos_txt" id="txt_ahorros_ing_4" name="txt_ahorros_ing_4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Otro Ingreso</h3></td>
+                                            <td width="30%"><input type="number" class="ingresos_txt" id="txt_otro_ing_4" name="txt_otro_ing_4"></td>
+                                        </tr>
+                                        <tr>
+                                            <th width="60%" scope="row"><h3>Total de Ingresos</h3></td>
+                                            <td width="30%"><input type="number" id="txt_total_ing_4" name="txt_total_ing_4"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="gastos" class="gas_">
+                                <table class="table-bancontrol" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th width="55%" scope="col"><h2><b>Tipo de Gastos</b></h2></th>  
+                                            <th width="35%" scope="col"><h2><b>Valor</b></h2></th>  
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width="60%"><h3>Alimentación</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_alimentacion_gas_4" name="txt_alimentacion_gas_4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Educación</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_educacion_gas_4" name="txt_educacion_gas_4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Transporte</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_transporte_gas_4" name="txt_transporte_gas_4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Servicios Básicos</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_servicios_gas_4" name="txt_servicios_gas_4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Arriendo</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_arriendo_gas_4" name="txt_arriendo_gas_4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="60%"><h3>Vestimenta</h3></td>
+                                            <td width="30%"><input type="number" class="txt_gastos" id="txt_vestimenta_gas_4" name="txt_vestimenta_gas_4"></td>
+                                        </tr>
+                                        <tr>
+                                            <th width="60%" scope="row"><h3>Total de Gastos</h3></td>
+                                            <td width="30%"><input type="number" id="txt_total_gas_4" name="txt_total_gas_4"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="menu-bancontrol">
+                                <img class="efecto-boton b_i" id="btn_ingresos" src="images/btn_ingresos.png">
+                                <img class="efecto-boton" id="btn_asesor_4" src="images/btn_asesor.png">
+                                <img class="efecto-boton b_g" id="btn_gastos" src="images/btn_gastos.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--
+            ========================= BENEFICIOS PAGE ==========================
+        -->
+
+        <div id="beneficios-page" data-role="page" class="type-home">
+            <div id="menu-header">
+                <a href="#menu-page" data-direction="reverse">
+                    <div class="back-menu">
+                        <img class="img-back" src="images/back.png">
+                    </div>
+                </a>
+                <div class="logo-menu-img">
+                    <img class="logo-menu-all" src="images/bancomenulabel.png">
+                </div>
+            </div>
+            <div class="content">
+                <div id="contenedor-twitter">
+                    <div class="izq-tw">
+                        <img src="images/twitter.png">
+                    </div>
+                    <div class="der-tw">
+                         
+                    </div>
+                </div>
+                <div class="titulo-page">
+                    <div class="titulo-page-left">
+                        <img src="images/beneficios.png">
+                    </div>
+                    <div class="titulo-page-right">
+                        <h2>Beneficios</h2>
+                    </div>
+                </div>
+                <div id="contenido">
+                    <div id="anun_ben" class="anuncio_interbox">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--
+            ========================= SERVICIOS PAGE ==========================
+        -->
+
+        <div id="servicios-page" data-role="page" class="type-home">
+            <div id="menu-header">
+                <a href="#menu-page" data-direction="reverse">
+                    <div class="back-menu">
+                        <img class="img-back" src="images/back.png">
+                    </div>
+                </a>
+                <div class="logo-menu-img">
+                    <img class="logo-menu-all" src="images/bancomenulabel.png">
+                </div>
+            </div>
+            <div class="content">
+                <div id="contenedor-twitter">
+                    <div class="izq-tw">
+                        <img src="images/twitter.png">
+                    </div>
+                    <div class="der-tw">
+                         
+                    </div>
+                </div>
+                <div class="titulo-page">
+                    <div class="titulo-page-left">
+                        <img src="images/servicio.png">
+                    </div>
+                    <div class="titulo-page-right">
+                        <h2>Servicio al cliente</h2>
+                    </div>
+                </div>
+                <div id="contenido">
+                    <div id="chat-wrapp">
+                        <p id="chat-bottom"></p>
+                    </div>
+                    <textarea id="txt_mensaje_chat"></textarea>
+                    <img id="btn_enviar_chat" src="images/btn_enviar_chat.png" class="efecto-boton"></br>
+                    <img id="btn_enviar_comentarios" src="images/btn_comentarios.png" class="efecto-boton">
+                    <p class="separador-inferior">.</p>
+                </div>
+            </div>
+        </div>
+
+        <!--
+            ========================= INTERBOX PAGE ==========================
+        -->
+
+        <div id="interbox-page" data-role="page" class="type-home">
+            <div id="menu-header">
+                <a href="#menu-page" data-direction="reverse">
+                    <div class="back-menu">
+                        <img class="img-back" src="images/back.png">
+                    </div>
+                </a>
+                <div class="logo-menu-img">
+                    <img class="logo-menu-all" src="images/bancomenulabel.png">
+                </div>
+            </div>
+            <div class="content">
+                <div id="contenedor-twitter">
+                    <div class="izq-tw">
+                        <img src="images/twitter.png">
+                    </div>
+                    <div class="der-tw">
+                         
+                    </div>
+                </div>
+                <div class="titulo-page">
+                    <div class="titulo-page-left">
+                        <img src="images/interbox.png">
+                    </div>
+                    <div class="titulo-page-right">
+                        <h2>Interbox</h2>
+                    </div>
+                </div>
+                <div id="contenido">
+                    <h2>Ingresa a tu cuenta</h2>
+                    <a href='#' class='link' rel='https://micuenta.courierbox.com/?a=interbox'><img src="images/btn_sesion.png" id="btn_sesion_interbox" class="efecto-boton"></a>
+                    <h2>¿Cliente nuevo?</h2>
+                    <a href='#' class='link' rel='https://secure.courierbox.com/ec/alianzas/interbox/registroclientes.aspx'><img src="images/btn_registrate.png" id="btn_registro_interbox" class="efecto-boton"></a>
+                    <div id="anun_int" class="anuncio_interbox">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/googlemap.js"></script>
+        
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        
+    </body>
+</html>
